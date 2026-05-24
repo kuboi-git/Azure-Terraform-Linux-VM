@@ -44,6 +44,7 @@ rg-terraform-test
           Web Server
           │
           └─ Welcome to nginx!
+
 ---
 
 # 3. 使用サービス
