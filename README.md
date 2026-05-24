@@ -7,6 +7,7 @@ Terraform により以下リソースをコード管理しています。
 ---
 
 # 2. 構成図
+
 ```text
 Resource Group
 rg-terraform-test
@@ -44,7 +45,7 @@ rg-terraform-test
           Web Server
           │
           └─ Welcome to nginx!
-
+```
 ---
 
 # 3. 使用サービス
