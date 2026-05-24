@@ -4,16 +4,6 @@ Terraform を使用して Azure 上に Linux VM を構築し、nginx Web サー�
 
 Terraform により以下リソースをコード管理しています。
 
-- Resource Group
-- Virtual Network
-- Subnet
-- Network Security Group
-- Public IP
-- Network Interface
-- Linux Virtual Machine
-
-また、SSH接続および nginx の動作確認を実施しました。
-
 ---
 
 # 2. 構成図
