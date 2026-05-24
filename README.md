@@ -18,43 +18,42 @@ Terraform により以下リソースをコード管理しています。
 
 # 2. 構成図
 ```text
-                Internet
-                    │
-                    ▼
-          Public IP (Static)
-        pip-terraform-test
-                    │
-                    ▼
-     Network Security Group
-         nsg-terraform-test
-         ├─ Allow SSH (22)
-         └─ Allow HTTP (80)
-                    │
-                    ▼
-      Virtual Network (VNet)
-       vnet-terraform-test
-          10.0.0.0/16
-                    │
-                    ▼
-              Subnet
-      subnet-terraform-test
-           10.0.10.0/24
-                    │
-                    ▼
-        Network Interface
-        nic-terraform-test
-                    │
-                    ▼
-      Linux Virtual Machine
-        vm-terraform-test
-         Ubuntu 22.04
-                    │
-                    ▼
-                nginx
-             Web Server
-                    │
-                    ▼
-        Welcome to nginx!
+Resource Group
+rg-terraform-test
+│
+├─ Virtual Network
+│    vnet-terraform-test
+│    10.0.0.0/16
+│
+│    └─ Subnet
+│         subnet-terraform-test
+│         10.0.10.0/24
+│
+│         └─ Network Security Group
+│              nsg-terraform-test
+│              ├─ Allow SSH (22)
+│              └─ Allow HTTP (80)
+│
+├─ Public IP
+│    pip-terraform-test
+│    Static IP
+│
+├─ Network Interface
+│    nic-terraform-test
+│    ├─ Connected Subnet
+│    │    subnet-terraform-test
+│    └─ Connected Public IP
+│         pip-terraform-test
+│
+└─ Linux Virtual Machine
+     vm-terraform-test
+     Ubuntu 22.04
+     Size: Standard_D2s_v3
+     │
+     └─ nginx
+          Web Server
+          │
+          └─ Welcome to nginx!
 ---
 
 # 3. 使用サービス
