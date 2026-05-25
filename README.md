@@ -104,10 +104,10 @@ http://PublicIP
 ### VMサイズ不足エラー
 
 #### 原因
-Japan East で利用可能なVMサイズ不足。
+Japan Eastで利用可能なVMサイズ不足。
 
 #### 解決方法
-VMサイズを Standard_D2s_v3 に変更し解決。
+VMサイズをStandard_D2s_v3に変更し解決。
 
 ---
 
