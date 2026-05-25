@@ -131,10 +131,10 @@ HTTP許可ルール追加で解決。
 ---
 
 # 7. 学んだこと
-- Terraform による Azure インフラ構築
-- Azure VM 作成時のネットワーク構成
-- NSG による通信制御
-- Public IP と NIC の役割
+- TerraformによるAzureインフラ構築
+- Azure VM作成時のネットワーク構成
+- NSGによる通信制御
+- Public IPとNICの役割
 - SSH接続の仕組み
-- nginx によるWebサーバ公開
-- Terraform のエラー修正方法
+- nginxによるWebサーバ公開
+- Terraformのエラー修正方法
