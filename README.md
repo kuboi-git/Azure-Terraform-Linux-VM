@@ -1,4 +1,5 @@
 # Azure-Terraform-Linux-VM
+
 # 1. 概要
 Terraformを使用してAzure上にLinux VMを構築し、nginx Webサーバを公開しました。
 
@@ -64,16 +65,16 @@ rg-terraform-test
 ---
 
 # 4. 作成順序
-1. Resource Group 作成
-2. Virtual Network 作成
-3. Subnet 作成
-4. Network Security Group 作成
-5. NSG を Subnet に関連付け
-6. Public IP 作成
-7. Network Interface 作成
-8. Linux VM 作成
+1. Resource Group作成
+2. Virtual Network作成
+3. Subnet作成
+4. Network Security Group作成
+5. NSG を Subnetに関連付け
+6. Public IP作成
+7. Network Interface作成
+8. Linux VM作成
 9. SSH接続確認
-10. nginx インストール
+10. nginxインストール
 11. HTTP(80)許可
 12. ブラウザ表示確認
 
