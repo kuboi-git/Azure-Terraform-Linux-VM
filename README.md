@@ -1,8 +1,8 @@
 # Azure-Terraform-Linux-VM
 # 1. 概要
-Terraform を使用して Azure 上に Linux VM を構築し、nginx Web サーバを公開しました。
+Terraformを使用してAzure上にLinux VMを構築し、nginx Webサーバを公開しました。
 
-Terraform により以下リソースをコード管理しています。
+Terraformにより以下リソースをコード管理しています。
 
 ---
 
