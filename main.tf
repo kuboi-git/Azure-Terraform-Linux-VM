@@ -63,8 +63,12 @@ resource "azurerm_linux_virtual_machine" "vm" {
         azurerm_network_interface.nic.id,
     ]
 
-    admin_password = "Password1234!"
-    disable_password_authentication = false
+    disable_password_authentication = true
+
+    admin_ssh_key {
+        username = "azureuser"
+        public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKp2Fy0oy2/rJlfj+mnHQsBz4prP5xvSk7f92Y9+N6p0 kuboi@LAPTOP-89Q1ELTG"
+    }
 
     os_disk {
         caching = "ReadWrite"
