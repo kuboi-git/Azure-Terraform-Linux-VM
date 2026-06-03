@@ -2,8 +2,16 @@
 
 # 1. 概要
 Terraformを使用してAzure上にLinux VMを構築し、nginx Webサーバを公開しました。
+また、SSH Key Authenticationによる安全なLinux VMへの接続を実装しました。 
 
-Terraformにより以下リソースをコード管理しています。
+Terraformにより以下リソースをコード管理しています。 
+- Resource Group
+- Virtual Network
+- Subnet
+- Network Security Group
+- Public IP
+- Network Interface
+- Linux Virtual Machine。
 
 ---
 
