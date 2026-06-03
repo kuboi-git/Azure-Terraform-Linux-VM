@@ -11,7 +11,7 @@ Terraformにより以下リソースをコード管理しています。
 - Network Security Group
 - Public IP
 - Network Interface
-- Linux Virtual Machine。
+- Linux Virtual Machine
 
 ---
 
@@ -67,6 +67,7 @@ rg-terraform-test
 | Azure Public IP              | 外部公開IP     |
 | Azure Network Interface      | VMネットワーク接続 |
 | Azure Linux Virtual Machine  | Linuxサーバ構築 |
+| SSH Key Authentication       | 安全なLinuxログイン |
 | nginx                        | Webサーバ     |
 | Terraform                    | IaC構成管理    |
 
@@ -81,10 +82,11 @@ rg-terraform-test
 6. Public IP作成
 7. Network Interface作成
 8. Linux VM作成
-9. SSH接続確認
-10. nginxインストール
-11. HTTP(80)許可
-12. ブラウザ表示確認
+9. SSH Key Authentication設定
+10. SSH鍵認証接続確認
+11. nginxインストール
+12. HTTP(80)許可
+13. ブラウザ表示確認
 
 ---
 
@@ -92,14 +94,14 @@ rg-terraform-test
 
 ### SSH接続確認
 
-Linux VMへのSSH接続成功を確保。
+SSH Key Authenticationを使用してLinux VMへの接続成功を確認。
 
 ```bash
 ssh azureuser@PublicIP
 ```
 
 #### nginx動作確認
-ブラウザで下記でアクセス
+ブラウザで下記URLへアクセス
 
 ```bash
 http://PublicIP
@@ -112,21 +114,22 @@ http://PublicIP
 ### VMサイズ不足エラー
 
 #### 原因
-Japan Eastで利用可能なVMサイズ不足。
+Japan Eastリージョンで選択したVMサイズが利用できなかった。
 
 #### 解決方法
 VMサイズをStandard_D2s_v3に変更し解決。
 
 ---
 
-### SSH接続タイムアウト
+### SSH鍵認証設定
 
 #### 原因
-NSGで22番ポート許可が未設定。
+公開鍵と秘密鍵の役割、およびTerraformへの設定方法の理解に苦戦した。
 
 #### 解決方法
-NSGへSSH許可ルールを追加し解決。
-
+公開鍵をTerraformへ設定し、秘密鍵をローカルPCへ保存することで
+SSH Key Authenticationによる安全なVM接続を実現した。
+   
 ---
 
 ### nginxへアクセス不可
@@ -145,5 +148,8 @@ HTTP許可ルール追加で解決。
 - NSGによる通信制御
 - Public IPとNICの役割
 - SSH接続の仕組み
+- SSH Key Authenticationの仕組み
+- Password認証とSSH鍵認証の違い
+- 公開鍵と秘密鍵の役割
 - nginxによるWebサーバ公開
 - Terraformのエラー修正方法
