@@ -122,32 +122,14 @@ ssh -i "<秘密鍵のパス>" azureuser@<VMのパブリックIP>
 ---
 
 # 6. 苦労したこと
+
 ### `terraform init` でプロバイダーを取得できなかった
 
-`terraform init` の実行中に、Terraform Registryとの接続が切れ、AzureRMプロバイダーを取得できませんでした。`curl` ではRegistryの最初のURLが応答することを確認できましたが、`terraform init` は再実行しても失敗しました。
-
-スマートフォンのテザリングに切り替えて再実行すると、AzureRMプロバイダーのインストールが完了しました。元の回線で接続が切れた原因は特定できていません。
-
----
-
-### SSH鍵認証設定
-
 #### 原因
-公開鍵と秘密鍵の役割、およびTerraformへの設定方法の理解に苦戦した。
+元の回線では、Terraform Registryへの接続が途中で切れ、AzureRMプロバイダーを取得できませんでした。接続が切れた根本原因は特定できていません。
 
 #### 解決方法
-公開鍵をTerraformへ設定し、秘密鍵をローカルPCへ保存することで
-SSH Key Authenticationによる安全なVM接続を実現した。
-   
----
-
-### nginxへアクセス不可
-
-#### 原因
-HTTP(80番)がNSGで未許可。
-
-#### 解決方法
-HTTP許可ルール追加で解決。
+スマートフォンのテザリングに切り替えて `terraform init` を再実行し、AzureRMプロバイダーのインストールとTerraformの初期化が完了しました。
 
 ---
 
