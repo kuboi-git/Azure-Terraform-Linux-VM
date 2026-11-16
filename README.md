@@ -105,11 +105,14 @@ WindowsのPowerShellから、秘密鍵を指定してUbuntu VMに接続しまし
 ssh -i "<秘密鍵のパス>" azureuser@<VMのパブリックIP>
 ```
 
+---
 
 #### nginx動作確認
 **VM内**：`curl -I http://localhost` を実行し、`HTTP/1.1 200 OK` と `Server: nginx/1.18.0 (Ubuntu)` を確認しました。
 
 <img width="387" height="29" alt="スクリーンショット 2026-11-16 233834" src="https://github.com/user-attachments/assets/89eb8a40-2a8f-4afa-bd78-03434133d4b6" />
+
+---
 
 **PCのブラウザ**：`http://<VMのパブリックIP>` を開き、「Welcome to nginx!」が表示されることを確認しました。
 <img width="666" height="233" alt="welcome" src="https://github.com/user-attachments/assets/37ab5fd2-b1a3-427d-acda-348a8fb84a4e" />
