@@ -77,7 +77,7 @@ rg-terraform-test
 1. Resource Group作成
 2. Virtual Network作成
 3. Subnet作成
-4. Network Security Group作成
+4. Network Security Groupを作成し、SSH（22）とHTTP（80）の受信ルールを設定
 5. NSG を Subnetに関連付け
 6. Public IP作成
 7. Network Interface作成
@@ -85,8 +85,7 @@ rg-terraform-test
 9. SSH Key Authentication設定
 10. SSH鍵認証接続確認
 11. nginxインストール
-12. HTTP(80)許可
-13. ブラウザ表示確認
+12. ブラウザ表示確認
 
 ---
 
