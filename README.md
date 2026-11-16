@@ -1,8 +1,9 @@
 # Azure-Terraform-Linux-VM
 
 # 1. 概要
-Terraformを使用してAzure上にLinux VMを構築し、nginx Webサーバを公開しました。
-また、SSH Key Authenticationによる安全なLinux VMへの接続を実装しました。 
+
+Terraformを使い、AzureのJapan EastリージョンにUbuntu 22.04 LTSの仮想マシンとネットワークを構築しました。
+SSHのパスワード認証を無効にし、公開鍵認証でVMに接続しました。VM上でnginxをインストールし、VM内でHTTP 200が返ることと、PCのブラウザからパブリックIP経由で「Welcome to nginx!」が表示されることを確認しました。 
 
 Terraformにより以下リソースをコード管理しています。 
 - Resource Group
