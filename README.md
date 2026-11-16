@@ -122,13 +122,11 @@ ssh -i "<秘密鍵のパス>" azureuser@<VMのパブリックIP>
 ---
 
 # 6. 苦労したこと
-### VMサイズ不足エラー
+### `terraform init` でプロバイダーを取得できなかった
 
-#### 原因
-Japan Eastリージョンで選択したVMサイズが利用できなかった。
+`terraform init` の実行中に、Terraform Registryとの接続が切れ、AzureRMプロバイダーを取得できませんでした。`curl` ではRegistryの最初のURLが応答することを確認できましたが、`terraform init` は再実行しても失敗しました。
 
-#### 解決方法
-VMサイズをStandard_D2s_v3に変更し解決。
+スマートフォンのテザリングに切り替えて再実行すると、AzureRMプロバイダーのインストールが完了しました。元の回線で接続が切れた原因は特定できていません。
 
 ---
 
