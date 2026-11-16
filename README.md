@@ -75,18 +75,23 @@ rg-terraform-test
 ---
 
 # 4. 作成順序
-1. Resource Group作成
-2. Virtual Network作成
-3. Subnet作成
-4. Network Security Groupを作成し、SSH（22）とHTTP（80）の受信ルールを設定
-5. NSG を Subnetに関連付け
-6. Public IP作成
-7. Network Interface作成
-8. Linux VM作成
-9. SSH Key Authentication設定
-10. SSH鍵認証接続確認
-11. nginxインストール
-12. ブラウザ表示確認
+1. **SSH鍵を作成**  
+   Windowsで鍵のペアを作成し、公開鍵を `main.tf` に設定しました。
+   
+3. **Terraformを初期化**  
+   `terraform init` を実行し、AzureRMプロバイダーを準備しました。
+
+4. **作成予定を確認**  
+   `terraform plan` を実行し、10件の新規作成、変更・削除は0件であることを確認しました。
+
+5. **Azure環境を構築**  
+   `terraform apply` を実行し、VMとネットワークを構築しました。NSGのサブネットへの関連付けと、SSH（TCP 22）・HTTP（TCP 80）の受信ルールもこの段階で作成しました。
+
+6. **VMにSSH接続**  
+   VMのパブリックIPを確認し、Windowsに保存した秘密鍵を指定して接続しました。
+
+7. **nginxをインストール**  
+   SSH接続したUbuntu上で `sudo apt update` と `sudo apt install nginx` を実行しました。
 
 ---
 
